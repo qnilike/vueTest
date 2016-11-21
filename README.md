@@ -30,9 +30,9 @@
       （2）局部组件
       
           组件定义到某个元素的示例内部,该组件只能应用在#app内
-
+          
             var componentName=Vue.extend({
-              template:'<div>this is the way to create a component</div>'
+                 template:'<div>this is the way to create a component</div>'
             });
             new Vue({
               el:"#app",

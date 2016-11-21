@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vueComponent</title>
+</head>
+<body>
+    <div id="app">
+        <a-b></a-b>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    /*1.创建组件构造器------参数template用于要渲染组件的html*/
+    var firstCom =Vue.extend({
+        template:'<div>this is my first component!</div>'
+    });
+    /*2.注册组件-----组件的标签,组件名*/
+    Vue.component('a-b',firstCom );
+    /*3.应用到示例*/
+    new Vue({
+        el:'#app'
+    });
+</script>
+</html>

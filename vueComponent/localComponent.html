@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vueComponent</title>
+</head>
+<body>
+    <div id="app">
+        <local-component></local-component>
+    </div>
+    <p>非APP下使用</p>
+    <local-component></local-component>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var localCom=Vue.extend({
+        template:'<div>这是一个局部注册的组件,仅仅你用在#app中</div>'
+    });
+    new Vue({
+        el:'#app',
+        components:{
+            'local-component':localCom
+        }
+    });
+</script>
+</html>

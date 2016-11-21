@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父组件和子组件</title>
+</head>
+<body>
+    <div id="app">
+        <parent-com></parent-com>
+    </div>
+    <p>以下形式1不能使用</p>
+    <!--<parent-component>
+        <child-component></child-component>
+    </parent-component>-->
+    <p>以下形式2不能使用</p>
+    <!--<parent-component></parent-component>
+    <child-component></child-component>-->
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var child=Vue.extend({
+        template:'<div>这是一个子组件！</div>'
+    });
+    var parent=Vue.extend({
+        template:'<div>这是一个父组件！</div><child-com></child-com>',
+        components:{
+            //注册子组件，只能在父级中使用
+            'child-com':child
+        }
+    });
+    Vue.component('parent-com',parent);
+    new Vue({
+        el:'#app'
+    });
+</script>
+</html>

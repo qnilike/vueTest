@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>componentUpDemo</title>
+</head>
+<body>
+    <div id="app">
+        <div id="searchBar">
+            serach:<input type="text" v-model="searchQuery">
+        </div>
+        <com-demo :columns="gridColumns" :data="gridData" :filter-key="searchQuery"></com-demo>
+    </div>
+    <template id="comDemo">
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="col in columns">{{ title | capitalize}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="entry in data | filterBy filterKey">
+                    <td v-for="col in columns">
+                        {{entry[col]}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            searchQuery:'',
+            gridColumns:["name","age","sex"],
+            gridData:[{
+                name:'qq',
+                age:11,
+                sex:'女'
+            },{
+                name:'tt',
+                age:22,
+                sex:"男"
+            },{
+                name:'xx',
+                age:33,
+                sex:"女"
+            }]
+        },
+        components:{
+            'com-demo':{
+                template:'#comDemo',
+                props:{
+                    data:Array,
+                    columns:Array,
+                    filterKey:String
+                }
+            }
+        }
+    });
+</script>
+</html>

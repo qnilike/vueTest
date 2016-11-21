@@ -31,7 +31,7 @@
     
           组件定义到某个元素的示例内部,该组件只能应用在#app内
             var componentName=Vue.extend({
-                 template:'<div>this is the way to create a component</div>'
+                template:'<div>this is the way to create a component</div>'
             });
             new Vue({
               el:"#app",
@@ -42,4 +42,4 @@
          
 #### 3.父组件和子组
 
-    我们可以在组件中定义和使用其他组件，就构成了父子组件
+    我们可以在组件中定义和使用其他组件，就构成了父子组件

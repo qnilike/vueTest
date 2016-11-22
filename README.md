@@ -48,4 +48,23 @@
 #### 4.组件注册语法糖
 
         简单理解就是代码的简写：
-        Vue.component()
+        Vue.component('label-name',{template:'<div>i这是一个语法糖</div>'})
+      
+#### 5.使用script或者template---推荐使用
+
+        更好的让js和html分开;
+        Vue.component('component-name','模板ID');
+        (1)script需要些上type类型
+            <script type="x-template" id="模板ID">
+                html代码
+            </script>
+        (2)template不需要些上type类型
+            <template id="模板ID">
+                    html代码
+            </template>
+          
+#### 6.props、sync、once
+
+        props是子组件借用父组件的值，默认是单向绑定，父级改变，子组件跟着变化;
+        sync可以把单向绑定转化为双向绑定;
+        once是单次绑定，父组件不会影响子组件，互不影响;

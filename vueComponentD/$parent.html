@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$ref</title>
+</head>
+<body>
+    <div id="app">
+        <parent-component></parent-component>
+    </div>
+    <template id="parentCom">
+        <child-component></child-component>
+    </template>
+    <template id="child1">
+        <h2>this is a child11111 component</h2>
+        <button @click="showChildData">点击展示父组件内容</button>
+    </template>
+</body>
+    <script src="js/vue.js"></script>
+    <script>
+        Vue.component('parent-component',{
+            template:'#parentCom',
+            components:{
+                'child-component':{
+                    template:'#child1',
+                    data:function () {
+                        return {
+                            msg:'这是第一个孩子组件11111111!'
+                        }
+                    },
+                    methods:{
+                        showChildData:function () {
+                            alert(this.$parent.aaa);
+                        }
+                    }
+                }
+            },
+            data:function () {
+                return {
+                    aaa:'aaaaaaaaaaaaaaaa'
+                }
+            }
+        });
+        new Vue({
+            el:'#app'
+        })
+    </script>
+</html>

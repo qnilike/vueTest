@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$children</title>
+</head>
+<body>
+    <div id="app">
+        <parent-component></parent-component>
+    </div>
+    <template id="parentCom">
+        <h2>this is a parent component</h2>
+        <child-component1></child-component1>
+        <child-component2></child-component2>
+        <button @click="showChildData">点击展示子组件内容</button>
+    </template>
+    <template id="child1">
+        <h2>this is a child11111 component</h2>
+    </template>
+    <template id="child2">
+        <h2>this is a child2222 component</h2>
+    </template>
+</body>
+    <script src="js/vue.js"></script>
+    <script>
+        Vue.component('parent-component',{
+            template:'#parentCom',
+            components:{
+                'child-component1':{
+                    template:'#child1',
+                    data:function () {
+                        return {
+                            msg:'这是第一个孩子组件!'
+                        }
+                    }
+                },
+                'child-component2':{
+                    template:'#child2',
+                    data:function () {
+                        return {
+                            msg:'这是第二个孩子组件!'
+                        }
+                    }
+                }
+            },
+            methods:{
+                showChildData:function () {
+                    for(var i=0;i<this.$children.length;i++){
+                        alert(this.$children[i].msg);
+                    }
+                }
+            }
+        });
+        new Vue({
+            el:'#app'
+        })
+    </script>
+</html>

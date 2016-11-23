@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>理解组件作用域</title>
+</head>
+<body>
+    <div id="app">
+        <scope-com v-show="display"></scope-com>
+    </div>
+    <template id="testScope">
+        <h2>{{ msg }}</h2>
+    </template>
+</body>
+    <script src="js/vue.js"></script>
+    <script>
+       new Vue({
+            el:'#app',
+            data:{
+                display:true
+            },
+            components:{
+                'scope-com':{
+                    template:'#testScope',
+                    data:function () {
+                        return {
+                            msg:'this is a test',
+                            display:false
+                        }
+                    },
+                    methods:{
+                        showMsg:function () {
+                            alert(this.msg);
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</html>

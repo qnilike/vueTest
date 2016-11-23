@@ -70,12 +70,13 @@
         once是单次绑定，父组件不会影响子组件，互不影响;
      
 #### 注意事项
-        在c组件中写data、el的时候，需要使用函数格式;
+
+    在c组件中写data、el的时候，需要使用函数格式;
         Vue.component({
             template:'#com',
             data:function(){
-                return {
-                    msg:'this is a expamle';
-                }
-            }
+            return {
+                msg:'this is a expamle';
+              }
+           }
         });

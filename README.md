@@ -52,7 +52,7 @@
       
 #### 5.使用script或者template---推荐使用
 
-        更好的让js和html分开;
+        更好的让js和html分开
         Vue.component('component-name','模板ID');
         (1)script需要些上type类型
             <script type="x-template" id="模板ID">

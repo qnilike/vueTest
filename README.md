@@ -93,8 +93,9 @@
     slot就是一个内容插槽，多个插槽可以使用name区别
     
 #### 3.父子组件之间的通信
-[$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)
 
     父组件访问子组件：$children或者$refs;
     子组件访问父组件：$parent;
     子组件访问根组件：$root;
+Demo：
+[$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)

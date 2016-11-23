@@ -114,8 +114,6 @@ Demo：
 Demo：[派发事件](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-%E6%B4%BE%E5%8F%91%E4%BA%8B%E4%BB%B6.html)
 [广播事件](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-%E6%B4%BE%E5%8F%91%E4%BA%8B%E4%BB%B6.html)
 
-============================================================================================
-## 以上是自己学习组件的小练习
 ### 总结
     Vue.js组件的API来源于三部分——prop，slot和事件。
     prop 允许外部环境传递数据给组件；

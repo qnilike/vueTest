@@ -68,3 +68,14 @@
         props是子组件借用父组件的值，默认是单向绑定，父级改变，子组件跟着变化;
         sync可以把单向绑定转化为双向绑定;
         once是单次绑定，父组件不会影响子组件，互不影响;
+     
+#### 注意事项
+        在c组件中写data、el的时候，需要使用函数格式;
+        Vue.component({
+            template:'#com',
+            data:function(){
+                return {
+                    msg:'this is a expamle';
+                }
+            }
+        });

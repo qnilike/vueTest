@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>派发事件</title>
+</head>
+<body>
+    <div id="app">
+        <p>Messages: {{ messages | json }}</p>
+        <child-component></child-component>
+    </div>
+
+    <template id="child-component">
+        <input v-model="msg" />
+        <button @click="notify">Dispatch Event</button>
+    </template>
+</body>
+    <script src="js/vue.js"></script>
+    <script>
+        // 注册子组件
+        Vue.component('child-component', {
+            template: '#child-component',
+            data: function() {
+                return {
+                    msg: ''
+                }
+            },
+            methods: {
+                notify: function() {
+                    if (this.msg.trim()) {
+                        //点击子组件中的按钮时，将事件派发给父组件的child-msg这个方法
+                        this.$dispatch('child-msg', this.msg)
+                        this.msg = ''
+                    }
+                }
+            }
+        })
+        // 初始化父组件
+        new Vue({
+            el: '#app',
+            data: {
+                messages: []
+            },
+            events: {
+                'child-msg': function(msg) {
+                    this.messages.push(msg)
+                }
+            }
+        })
+    </script>
+</html>

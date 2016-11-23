@@ -102,3 +102,20 @@ Demo：
 [$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)
 [$ref](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24refs.html)
 [$parent](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24parent.html)
+
+#### 4.自定义事件
+
+    每个 Vue 实例都是一个事件触发器：
+    使用 $on() 监听事件；
+    使用 $emit() 在它上面触发事件；
+    使用 $dispatch() 派发事件，事件沿着父链冒泡；
+    使用 $broadcast() 广播事件，事件向下传导给所有的后代。
+
+Demo：[派发事件](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-%E6%B4%BE%E5%8F%91%E4%BA%8B%E4%BB%B6.html)
+[广播事件](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-%E6%B4%BE%E5%8F%91%E4%BA%8B%E4%BB%B6.html)
+
+### 总结
+    Vue.js组件的API来源于三部分——prop，slot和事件。
+    prop 允许外部环境传递数据给组件；
+    事件 允许组件触发外部环境的 action；
+    slot 允许外部环境插入内容到组件的视图结构内。

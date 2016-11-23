@@ -100,3 +100,4 @@
 Demo：
 [$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)
 [$ref](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24refs.html)
+[$parent](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24parent.html)

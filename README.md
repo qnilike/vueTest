@@ -94,6 +94,6 @@
     
 #### 3.父子组件之间的通信
 
-    父组件访问子组件：$children或者$refs;[$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)
+    父组件访问子组件：$children或者$refs;[$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)
     子组件访问父组件：$parent;
     子组件访问根组件：$root;

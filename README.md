@@ -99,3 +99,4 @@
     子组件访问根组件：$root;
 Demo：
 [$children](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24children.html)
+[$ref](https://github.com/qnilike/vueTest/blob/master/vueComponentD/%24refs.html)

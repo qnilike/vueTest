@@ -119,3 +119,8 @@ Demo：[派发事件](https://github.com/qnilike/vueTest/blob/master/vueComponen
     prop 允许外部环境传递数据给组件；
     事件 允许组件触发外部环境的 action；
     slot 允许外部环境插入内容到组件的视图结构内。
+
+
+
+==================================================================
+### 二、router
